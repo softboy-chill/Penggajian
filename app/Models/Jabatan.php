@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Jabatan extends Model
+{
+    use HasFactory;
+
+    protected $fillable = [
+        'nama_jabatan',
+        'gaji_pokok',
+        'tunjangan',
+    ];
+
+    /**
+     * Get the pegawais/employees that belong to this Jabatan.
+     */
+    public function pegawais()
+    {
+        return $this->hasMany(Pegawai::class);
+    }
+}
